@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Comprehensive and SEO-optimized Calculator Hub for Age, SIP, BMI, LIC, Loan, and 7th Pay Commission calculations.">
+  <meta name="keywords" content="Age Calculator, SIP Calculator, BMI Calculator, LIC Calculator, Loan Calculator, 7th Pay Calculator, Financial Tools">
+  <meta name="author" content="Your Name">
+  <title>SEO-Friendly Calculator Hub | Age, SIP, Loan & More</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Best LIC Policies for Savings",
+  "author": {
+    "@type": "Person",
+    "name": "Gaurav Kumar"
+  },
+  "datePublished": "2025-02-09",
+  "publisher": {
+    "@type": "Organization",
+    "name": "Calculator Hub"
+  },
+  "mainEntityOfPage": "https://MyCalculatorHub.vercel.app/best-lic-policies.html"
+}
+</script>
+
+</head>
+<body>
+  <div class="container mt-5">
+    <h1 class="text-center mb-4">Calculator Hub</h1>
+    
+    <div class="d-flex flex-wrap gap-3 justify-content-center">
+      <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ageCalcModal">Age Calculator</button>
+      <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#sipCalcModal">SIP Calculator</button>
+      <button class="btn btn-info" data-bs-toggle="modal" data-bs-target="#bmiCalcModal">BMI Calculator</button>
+      <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#licCalcModal">LIC Calculator</button>
+      <button class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#loanCalcModal">Loan Calculator</button>
+      <button class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#payCalcModal">7th Pay Calculator</button>
+    </div>
+
+    <!-- Modal Templates -->
+    <!-- Age Calculator Modal -->
+    <div class="modal fade" id="ageCalcModal" tabindex="-1" aria-labelledby="ageCalcModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="ageCalcModalLabel">Age Calculator</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <label for="dob">Enter Date of Birth:</label>
+            <input type="date" id="dob" class="form-control mb-3">
+            <button class="btn btn-primary" onclick="calculateAge()">Calculate Age</button>
+            <p id="ageResult" class="mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SIP Calculator Modal -->
+    <div class="modal fade" id="sipCalcModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">SIP Calculator</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label for="monthlyInvestment">Monthly Investment:</label>
+            <input type="number" id="monthlyInvestment" class="form-control mb-3">
+            <label for="interestRate">Annual Interest Rate (%):</label>
+            <input type="number" id="interestRate" class="form-control mb-3">
+            <label for="years">Investment Duration (Years):</label>
+            <input type="number" id="years" class="form-control mb-3">
+            <button class="btn btn-success" onclick="calculateSIP()">Calculate SIP</button>
+            <p id="sipResult" class="mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BMI Calculator Modal -->
+    <div class="modal fade" id="bmiCalcModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">BMI Calculator</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" id="weight" class="form-control mb-3">
+            <label for="height">Height (cm):</label>
+            <input type="number" id="height" class="form-control mb-3">
+            <button class="btn btn-info" onclick="calculateBMI()">Calculate BMI</button>
+            <p id="bmiResult" class="mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIC Calculator Modal -->
+    <div class="modal fade" id="licCalcModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">LIC Calculator</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label for="licPremium">Enter Monthly Premium:</label>
+            <input type="number" id="licPremium" class="form-control mb-3">
+            <label for="licTerm">Policy Term (Years):</label>
+            <input type="number" id="licTerm" class="form-control mb-3">
+            <label for="licInterest">Expected Interest Rate (%):</label>
+            <input type="number" id="licInterest" class="form-control mb-3">
+            <button class="btn btn-warning" onclick="calculateLIC()">Calculate Maturity Amount</button>
+            <p id="licResult" class="mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Loan Calculator Modal -->
+    <div class="modal fade" id="loanCalcModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">Loan Calculator</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label for="loanAmount">Loan Amount:</label>
+            <input type="number" id="loanAmount" class="form-control mb-3">
+            <label for="loanInterest">Interest Rate (%):</label>
+            <input type="number" id="loanInterest" class="form-control mb-3">
+            <label for="loanTerm">Loan Term (Years):</label>
+            <input type="number" id="loanTerm" class="form-control mb-3">
+            <button class="btn btn-danger" onclick="calculateLoan()">Calculate EMI</button>
+            <p id="loanResult" class="mt-3"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 7th Pay Commission Calculator Modal -->
+    <div class="modal fade" id="payCalcModal" tabindex="-1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title">7th Pay Commission Calculator</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div class="modal-body">
+            <label for="basicPay">Enter Your Basic Pay:</label>
+            <input type="number" id="basicPay" class="form-control mb-3" placeholder="e.g., 50000">
+
+            <label for="daPercentage">DA (Dearness Allowance) Percentage:</label>
+            <input type="number" id="daPercentage" class="form-control mb-3" value="17" placeholder="Default is 17%">
+
+            <label for="hraPercentage">HRA (House Rent Allowance) Percentage:</label>
+            <input type="number" id="hraPercentage" class="form-control mb-3" value="24" placeholder="Default is 24%">
+
+            <button class="btn btn-dark w-100" onclick="calculate7thPay()">Calculate Gross Pay</button>
+            <p id="payResult" class="mt-3 text-success fw-bold"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+     <section class="mt-5">
+      <h2 class="text-center">Financial Guides & Insights</h2>
+      <div class="row mt-3">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">How to Get the Best SIP Returns</h5>
+              <p class="card-text">Learn strategies to maximize your SIP investments and build long-term wealth.</p>
+              <a href="best-sip-returns.html" class="btn btn-primary">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Best LIC Policies for Savings</h5>
+              <p class="card-text">Explore the top LIC policies that offer great returns and security for your savings.</p>
+              <a href="best-lic-policies.html" class="btn btn-warning">Read More</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">How to Manage Loans Wisely</h5>
+              <p class="card-text">Tips to manage loans effectively and reduce financial stress.</p>
+              <a href="loan-management-tips.html" class="btn btn-danger">Read More</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    function calculateAge() {
+      const dob = document.getElementById('dob').value;
+      if (!dob) return alert('Please select your date of birth');
+      const birthDate = new Date(dob);
+      const diff = Date.now() - birthDate.getTime();
+      const ageDate = new Date(diff);
+      const age = Math.abs(ageDate.getUTCFullYear() - 1970);
+      document.getElementById('ageResult').innerText = `Your age is ${age} years.`;
+    }
+
+    function calculateSIP() {
+      const p = parseFloat(document.getElementById('monthlyInvestment').value);
+      const r = parseFloat(document.getElementById('interestRate').value) / 1200;
+      const n = parseInt(document.getElementById('years').value) * 12;
+      if (isNaN(p) || isNaN(r) || isNaN(n)) return alert('Please fill all fields correctly');
+      const sipValue = p * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+      document.getElementById('sipResult').innerText = `Expected SIP Value: ₹${sipValue.toFixed(2)}`;
+    }
+
+    function calculateBMI() {
+      const weight = parseFloat(document.getElementById('weight').value);
+      const height = parseFloat(document.getElementById('height').value) / 100;
+      if (isNaN(weight) || isNaN(height)) return alert('Please enter valid weight and height');
+      const bmi = weight / (height * height);
+      document.getElementById('bmiResult').innerText = `Your BMI is ${bmi.toFixed(2)}`;
+    }
+
+    function calculateLIC() {
+      const premium = parseFloat(document.getElementById('licPremium').value);
+      const term = parseInt(document.getElementById('licTerm').value);
+      const rate = parseFloat(document.getElementById('licInterest').value) / 100;
+      if (isNaN(premium) || isNaN(term) || isNaN(rate)) return alert('Please fill all fields correctly');
+      const maturity = premium * ((Math.pow(1 + rate, term) - 1) / rate);
+      document.getElementById('licResult').innerText = `Expected Maturity Amount: ₹${maturity.toFixed(2)}`;
+    }
+
+    function calculateLoan() {
+      const principal = parseFloat(document.getElementById('loanAmount').value);
+      const annualRate = parseFloat(document.getElementById('loanInterest').value) / 100;
+      const years = parseInt(document.getElementById('loanTerm').value);
+      if (isNaN(principal) || isNaN(annualRate) || isNaN(years)) return alert('Please fill all fields correctly');
+      const monthlyRate = annualRate / 12;
+      const n = years * 12;
+      const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, n)) / (Math.pow(1 + monthlyRate, n) - 1);
+      document.getElementById('loanResult').innerText = `Monthly EMI: ₹${emi.toFixed(2)}`;
+    }
+
+    function calculate7thPay() {
+      const basicPay = parseFloat(document.getElementById('basicPay').value);
+      const daPercentage = parseFloat(document.getElementById('daPercentage').value);
+      const hraPercentage = parseFloat(document.getElementById('hraPercentage').value);
+
+      if (isNaN(basicPay) || isNaN(daPercentage) || isNaN(hraPercentage)) {
+        alert('Please fill all fields correctly');
+        return;
+      }
+
+      const da = (basicPay * daPercentage) / 100;
+      const hra = (basicPay * hraPercentage) / 100;
+      const grossPay = basicPay + da + hra;
+
+      document.getElementById('payResult').innerText = `Your 7th Pay Gross Salary: ₹${grossPay.toFixed(2)}`;
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
